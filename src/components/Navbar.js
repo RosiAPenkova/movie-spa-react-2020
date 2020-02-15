@@ -17,7 +17,7 @@ const HeaderNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="dark" dark expand="md"  color="transparent"
+    <Navbar color="dark" dark expand="md" 
     changeColorOnScroll={{
       height: 400,
       color: "white"
