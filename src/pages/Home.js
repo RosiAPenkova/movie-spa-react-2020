@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import { useSelector, useDispatch } from "react-redux";
-
-import setActionCount from "../redux/actions/counter";
-import {Container, Row, Col, Button} from 'reactstrap';
-import { connect } from "react-redux";
-
-
+import {Container, Row, Button} from 'reactstrap';
 
 class Home extends Component{
  

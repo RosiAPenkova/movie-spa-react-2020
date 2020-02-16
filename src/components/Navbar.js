@@ -17,12 +17,7 @@ const HeaderNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="dark" dark expand="md" 
-    changeColorOnScroll={{
-      height: 400,
-      color: "white"
-      
-    }}>
+    <Navbar  dark expand="md">
         <div className="container">
         <NavbarBrand href="/"> <img src={Logo} alt="Logo" /></NavbarBrand>
        
@@ -54,9 +49,9 @@ const HeaderNavbar = (props) => {
                 <NavItem>
                     <NavLink 
                         tag={RRNavLink} 
-                        to="/top" 
+                        to="/upcoming" 
                         activeClassName="active"
-                        >Top</NavLink>                
+                        >Upcoming Movies</NavLink>                
                 </NavItem>
             </Nav>
             </Collapse>

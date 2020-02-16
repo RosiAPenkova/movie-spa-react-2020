@@ -1,20 +1,19 @@
-import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import setActionCount from "../redux/actions/counter";
+import React, {Component} from "react";
+import FavoriteMovies from ".././components/FavoriteMovies";
 
-const Favorite = props => {
-    const title = useSelector(state => state.title);
-    const dispatch = useDispatch();
+class Favorite extends Component {
 
-    const setCounter = count => dispatch(setActionCount(count))
-    return <div>
-        <h1>{title}</h1>
-        <button
-            onClick={() => setCounter(20)} 
-            type="button" 
-            className="btn btn-danger"
-        >Change Global Counts</button>
-    </div>
+    render() {
+        return <div className="row">
+            <div className="col-md-6">
+                <div className="card">
+                    <div className="card-body">
+                        <FavoriteMovies/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 }
 
 export default Favorite;

@@ -1,6 +1,6 @@
 @import "./components/home";
 @import "./components/navbar";
-
+@import "./components/catalog";
   
 .appear {
   opacity: 1;
@@ -14,4 +14,39 @@
   -moz-animation-name: fadeInDown;
   -o-animation-name: fadeInDown;
   animation-name: fadeInDown;
+}
+
+.movie-card  {
+.movie-title {
+  width: 100%;
+  display: block;
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 1.1em;
+}
+
+.movie-description {
+  word-wrap: break-word;
+  white-space: normal;
+  color: #4d4d4d;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin-top: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.release-date{
+  color: rgba(0,0,0,0.6);
+    line-height: 1em;
+}
+
+}
+
+.movie-detail{
+  .movie-wrap {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 100%;
+    height: auto;
+}
 }
