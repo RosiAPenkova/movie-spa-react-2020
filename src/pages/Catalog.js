@@ -28,10 +28,10 @@ class Catalog extends Component{
         })
     }
 
-    getMovieList = () => {
+    getMovieInfo = () => {
       
        
-        const movieList = 
+        const movieInfo = 
             this.props.movieDatabaseMovies.map( movie => {
             return <MovieCard 
                 key={movie.id}
@@ -52,7 +52,7 @@ class Catalog extends Component{
             
 
         });
-        return movieList
+        return movieInfo
     }
 
     getYears = () => {
@@ -132,7 +132,7 @@ class Catalog extends Component{
                 </div>
             </div>
             <div className="row">
-                {this.getMovieList()}
+                {this.getMovieInfo()}
             </div>
         </div>
         <div className="row mb-3">

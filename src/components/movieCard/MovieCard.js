@@ -5,22 +5,18 @@ import {withRouter} from 'react-router-dom';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
-import FavoriteMovies from '../FavoriteMovies';
+import Catalog from '../../pages/Catalog';
 
 
 class MovieCard extends Component {
 
     componentDidMount() {
-        this.props.getMovies();
+        const movieId = this.props.match.params.id;
+        this.props.getMovieInfo(movieId);
     }
 
     toggleFavoriteMovie = movie => {
-        // const movieIndex = this.props.favoriteMovies.findIndex(el => el.id === movie.id);
-
-        const movieIndex = this.props.favoriteMovies.findIndex(el => el.id === movie.id);
-
-        // const movieId = this.props.match.params.id;
-        // this.props.getMovieInfo(movieId);
+           const movieIndex = this.props.favoriteMovies.findIndex(el => el.id === movie.id);
 
         if(movieIndex !== -1){
             this.props.removeFavoriteMovie(movieIndex);
@@ -34,24 +30,10 @@ class MovieCard extends Component {
         if(this.props.favoriteMovies.findIndex(el => el.id === movie.id) !== -1){
             return "active"
         }
-        return ""
+       
     }
 
-    getMovieList = () =>{
-        const movieList = this.props.movies.map(movie => {
-            return <i key={movie.id} className={
-                    "fa fa-heart mr-3 favorite-movie " + 
-                    this.getActiveClass(movie)
-                }
-                    onClick={() => {
-                        this.toggleFavoriteMovie(movie);
-                    }}
-                ></i>
-               
-                               
-        })
-        return movieList;
-    }
+   
 
     showMovieInfo = () => {
         this.props.history.push(`/movieinfo/${this.props.id}`);
@@ -71,8 +53,13 @@ class MovieCard extends Component {
                         <div className="pb-3 ">
                            <a href="" onClick={this.showMovieInfo}><h4 className="movie-title">{this.props.title}</h4></a>
                             <p className="release-date">{moment(this.props.release_date).format("MMMM Do YYYY")}</p>
-                            <div>{this.props.vote_average }% User Score</div> 
-                            <div>{this.getMovieList()}</div>
+                            <div>{this.props.vote_average }% User Score</div><i className={"fa fa-heart mr-3 favorite-movie " + this.getActiveClass(this.props.id)
+                    }
+                        onClick={() => {
+                            this.toggleFavoriteMovie(this.props.id);
+                        }}
+                    ></i>
+                            
                              
                             <div>{this.props.genres}</div>
                             <div className="mt-3b movie-description">
@@ -101,8 +88,8 @@ const mapStateToProps = state => {
 
 const mapStateToDispatch = dispatch => {
     return bindActionCreators({
-        setMovies: actions.setMovies,
-        getMovies: actions.getMovies,
+        setMovieInfo: actions.setMovieInfo,
+        getMovieInfo: actions.getMovieInfo,
         addFavoriteMovie: actions.addFavoriteMovie,
         removeFavoriteMovie: actions.removeFavoriteMovie
     }, dispatch)
