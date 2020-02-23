@@ -15,39 +15,124 @@
   -o-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
+.title{
+  text-align: center !important;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+label.white-text{
+  color:#fff;
+}
+.movie-card  {  
+  
+    width: 500px;
+    height: auto;
 
-.movie-card  {
+     @media(max-width: 1024px){
+      width: 100%;
+
+      img.movie-image {
+        width: 100%;
+    }
+    
+    }
+    
 .movie-title {
   width: 100%;
   display: block;
   font-weight: 600;
   font-size: 1.1em;
-  line-height: 1.1em;
+  line-height: 1.3em;
+  min-height: 45px;
 }
 
 .movie-description {
-  word-wrap: break-word;
-  white-space: normal;
-  color: #4d4d4d;
+ 
   font-size: 0.9em;
-  line-height: 1.2em;
+  line-height: 1.4em;
   margin-top: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  min-height: 80px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .release-date{
   color: rgba(0,0,0,0.6);
     line-height: 1em;
 }
-
+.fa-heart:before {
+  font-size: 20px;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 50%;
+}
+.favorite-movie.active {
+  color: #dc1427;
 }
 
+}
+button.btn.btn-link.bounce-in.animation.pull-right {
+  border: 2px solid;
+  margin-top: 0;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #666;
+}
+.percentage{
+  padding: 13px 8px;
+  border-radius: 50%;
+  color: #17a2b8;
+  border: 1px solid;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
 .movie-detail{
-  .movie-wrap {
-    display: flex;
-    flex: 1 1 auto;
-    min-height: 100%;
-    height: auto;
+  h1 {
+    font-size: 1.8rem;
+}
+h3{
+  font-size: 1.3rem;
+}
+.movie-description {
+  font-size: 15px;
+}
+.facts p{
+  margin-bottom: 5px;
+}
+ol.movie-facts {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+div.facts > ol > li {
+  width: 25%;
+  flex-basis: 25%;
+  text-align: left;
+  margin-bottom: 14px;
+  margin-right: 0;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+ol li p {
+  font-weight: bold;
+}
+@media(max-width: 1024px){
+
+  ol.movie-facts {
+    display: block;
+  }
+  div.facts > ol > li {
+    width: 100%;
+    flex-basis: 100%;
+  }
 }
 }
 

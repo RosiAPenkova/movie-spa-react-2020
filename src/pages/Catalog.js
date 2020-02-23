@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../redux/actions";
 
-  
+
 
 class Catalog extends Component{
 
@@ -24,20 +24,23 @@ class Catalog extends Component{
     discoverMovies = () => {
         this.props.getMdDiscoverMovies({
             primary_release_year: this.state.primary_release_year,
-            page: this.props.currentPage
+            page: this.props.currentPage,
+            sort_by: this.sort_by,
+            
         })
     }
 
     getMovieInfo = () => {
       
        
+
         const movieInfo = 
             this.props.movieDatabaseMovies.map( movie => {
             return <MovieCard 
                 key={movie.id}
                 title={movie.title}
                 vote_average={movie.vote_average}
-                genres={movie.genres}
+                getGenres={movie.genres}
                 poster_path={movie.poster_path}
                 release_date={movie.release_date}
                 overview={movie.overview}
@@ -54,6 +57,13 @@ class Catalog extends Component{
         });
         return movieInfo
     }
+
+    // getAvailableSort = () => {
+    //     const sortOption = [];
+        
+
+    // }
+   
 
     getYears = () => {
         const availableYears = [];
@@ -104,30 +114,31 @@ class Catalog extends Component{
     render() {
     return  <>
         <div>
-        <div className="row mt-10">
-        <h1>Discover New Movies</h1>
-        </div>
+        
+        <h1 className="title text-center">Discover New Movies</h1>
+        
         <div className="main-container">
             <div className="row mb-5">
                 <div className="col-md-3">
-                    <div className="input-group-prepend">
-                    <label className="input-group-text"
-                         htmlFor="release-year">Year</label>
-                    </div>
-                    <select
+                    <div>
+                    <label className="white-text"
+                         htmlFor="release-year">Year</label><select
                         onChange={this.releaseYearOnChange}
                         value={this.state.primary_release_year}
                         className="custom-select" 
                         id="release-year">
                         {this.getAvailableReleaseYears()}
                     </select>
-                    {/* <select
+                    </div>
+                    {/* <label className="input-group-text"
+                         htmlFor="sort_by">Sort By</label>
+                     <select
                         onChange={this.sortBy}
                         value={this.state.sort_by}
                         className="custom-select" 
                         id="sort-by">
                         {this.getAvailableSort()}
-                    </select> */}
+                    </select>  */}
 
                 </div>
             </div>
