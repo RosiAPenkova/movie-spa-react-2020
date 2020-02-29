@@ -1,9 +1,8 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from '../redux/actions';
 import UpcomingMovieComponent from '../components/upcomingMovie/UpcomingMovieComponent';
-import MovieCard from '../components/movieCard/MovieCard';
 
 
 
@@ -14,7 +13,7 @@ class UpcomingMovies extends Component {
         super(props);
         this.state = {
 
-            // upcomingMovies: []
+           
         }
     }
 
@@ -25,7 +24,7 @@ class UpcomingMovies extends Component {
     upcomingMovies = () => {
         this.props.getMdUpcomingMovies({
 
-            // upcomingMovies: this.state.upcomingMovies,
+           
             page: this.props.currentPage
         })
     }

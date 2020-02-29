@@ -14,7 +14,7 @@ class Catalog extends Component{
         super(props);
         this.state = {
             primary_release_year: new Date().getFullYear()
-        }
+        };
     }
     
     componentDidMount(){
@@ -24,8 +24,7 @@ class Catalog extends Component{
     discoverMovies = () => {
         this.props.getMdDiscoverMovies({
             primary_release_year: this.state.primary_release_year,
-            page: this.props.currentPage,
-            sort_by: this.sort_by,
+            page: this.props.currentPage
             
         })
     }
@@ -57,12 +56,6 @@ class Catalog extends Component{
         });
         return movieInfo
     }
-
-    // getAvailableSort = () => {
-    //     const sortOption = [];
-        
-
-    // }
    
 
     getYears = () => {
@@ -99,7 +92,8 @@ class Catalog extends Component{
     }
     getPages = () => {
         const pages = [];
-        for(let i = 1; i < this.props.totalPages; i++){
+        
+        for(let i = 1; i < 16  ; i++){
             pages.push(
                 <li key={i} className="page-item">
                 <a className="page-link"
@@ -130,15 +124,7 @@ class Catalog extends Component{
                         {this.getAvailableReleaseYears()}
                     </select>
                     </div>
-                    {/* <label className="input-group-text"
-                         htmlFor="sort_by">Sort By</label>
-                     <select
-                        onChange={this.sortBy}
-                        value={this.state.sort_by}
-                        className="custom-select" 
-                        id="sort-by">
-                        {this.getAvailableSort()}
-                    </select>  */}
+
 
                 </div>
             </div>
@@ -146,7 +132,7 @@ class Catalog extends Component{
                 {this.getMovieInfo()}
             </div>
         </div>
-        <div className="row mb-3">
+        <div className="row my-3">
                 <div className="col">
                     <ul className="pagination">
                         {this.getPages()}

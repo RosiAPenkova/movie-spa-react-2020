@@ -3,13 +3,13 @@ import FavoriteMovies from ".././components/FavoriteMovies";
 
     class Favorite extends Component {
 
-        // Favorite Movie page преди да е избран любим филм 
+      
         render() {
             return <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-12">
                     <div className="card">
                         <div className="card-body">
-                        отговаря на FavoriteMovies.js
+                        You haven't added any favorite movies.
                             <FavoriteMovies/>
                         </div>
                     </div>

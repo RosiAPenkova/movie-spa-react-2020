@@ -26,7 +26,7 @@ class MovieInfo extends Component {
                                 <img className="movie-image" alt=""
                                     src={constants.PosterURL + this.props.movieInfo.poster_path} /></div>
                                 <div className="col-md-8">
-                                    <div><h1 className="d-inline-block mb-4">{this.props.movieInfo.title}</h1> <span>{moment(this.props.movieInfo.release_date).format("(YYYY)")}</span></div>
+                                    <div className="my-4"><h1 className="d-inline-block">{this.props.movieInfo.title}</h1><sub>{moment(this.props.movieInfo.release_date).format("(YYYY)")}</sub></div>
                                     <div className="mb-3 rating"><span className="percentage">{this.props.movieInfo.vote_average }%</span> User Score</div>
                                     <div><h3 className="mt-4">Overview</h3>
                                         <div className="mt-3 movie-description ">{this.props.movieInfo.overview} </div>

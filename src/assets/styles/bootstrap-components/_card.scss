@@ -1,5 +1,11 @@
-//
-// Base styles
-//
-
-
+.btn-link:hover{
+    text-decoration: none;
+    background-color: #666 !important;
+    color:#fff !important ;
+}
+.movie-title{
+    color: #333;
+}
+.movie-title a:hover{
+    text-decoration: none !important;
+}

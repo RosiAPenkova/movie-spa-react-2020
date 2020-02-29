@@ -15,7 +15,7 @@ class MovieCard extends Component {
     }
 
     toggleFavoriteMovie = movie => {
-           const movieIndex = this.props.favoriteMovies.findIndex(el => el.id === movie.id);
+        const movieIndex = this.props.favoriteMovies.findIndex(el => el.id === movie.id);
 
         if(movieIndex !== -1){
             this.props.removeFavoriteMovie(movieIndex);
@@ -28,12 +28,14 @@ class MovieCard extends Component {
     getActiveClass = movie => {
         if(this.props.favoriteMovies.findIndex(el => el.id === movie.id) !== -1){
             return "active"
-        }  
+        }
+        return ""
     }
 
     showMovieInfo = () => {
         this.props.history.push(`/movieinfo/${this.props.id}`);
     }
+    
     render() {
         return <div className="col-md-6">
                 <div className="

@@ -5,11 +5,13 @@ import * as actions from "../redux/actions";
 import MovieCard from "./movieCard/MovieCard";
 class FavoriteMovies extends Component {
 
-    //Favorite Movie page - след кликане на сърцето в MovieCard - Catalog
+    
     getFavoriteMovies = () => {
         const favoriteMovies = this.props.favoriteMovies
         const favoriteMoviesList = favoriteMovies.map((movie, index) => {
-            return <MovieCard/>
+            return <div key={movie.id}>
+            <MovieCard/>
+            </div>
         })
         
         return favoriteMoviesList;
